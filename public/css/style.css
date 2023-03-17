@@ -1,0 +1,238 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+.modelBtn {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}
+.modelBtn i {
+
+    margin-left: -10px;
+}
+
+/* Progress bar */
+
+ol.progtrckr {
+    display: table;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+ol.progtrckr li {
+    display: table-cell;
+    text-align: center;
+    line-height: 3em;
+}
+
+ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: silver;
+    border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li:after {
+    content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+    position: relative;
+    bottom: -2.5em;
+    float: left;
+    left: 50%;
+    line-height: 1em;
+}
+ol.progtrckr li.progtrckr-done:before {
+    content: "\2713";
+    color: white;
+    background-color: yellowgreen;
+    height: 1.2em;
+    width: 1.2em;
+    line-height: 1.2em;
+    border: none;
+    border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-todo:before {
+    content: "\039F";
+    color: silver;
+    background-color: #FFF1EC;
+    font-size: 1.5em;
+    bottom: -1.6em;
+}
+
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+    pointer-events: none;
+  }
+
+
+
+  /* Progress bar start */
+  .clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+}
+.progress_content {
+	display: table-cell;
+	height: 400px;
+	vertical-align: middle;
+	text-align:center;
+    position: relative;
+    left:40%;
+}
+
+
+a, a:active {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #999;
+}
+.arrow-steps .step {
+	font-size: 16px;
+	text-align: center;
+	color: #666;
+	cursor: default;
+	margin: 0 3px;
+	padding: 17px 17px 17px 17px;
+	min-width: 180px;
+	float: left;
+	position: relative;
+	background-color: #d9e3f7;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+    font-weight: 600;
+
+}
+.arrow-steps a:hover{
+	cursor: pointer;
+}
+
+.arrow-steps .step:after,
+.arrow-steps .step:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: -17px;
+	width: 0;
+	height: 0;
+	border-top: 28px solid transparent;
+	border-bottom: 28px solid transparent;
+	/* border-left: 17px solid #d9e3f7;	 */
+	z-index: 1;
+  transition: border-color 0.2s ease;
+}
+
+.arrow-steps .step:before {
+	right: auto;
+	left: 0;
+	border-left: 17px solid white;
+	z-index: 0;
+}
+
+.arrow-steps .step:first-child:before {
+	border: none;
+}
+
+.arrow-steps .step:first-child {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.arrow-steps .step span {
+	position: relative;
+}
+
+.arrow-steps .step span:before {
+	opacity: 0;
+	content: "✔";
+	position: absolute;
+	top: -2px;
+	left: -20px;
+}
+
+.arrow-steps .step.done span:before {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease 0.5s;
+	-moz-transition: opacity 0.3s ease 0.5s;
+	-ms-transition: opacity 0.3s ease 0.5s;
+	transition: opacity 0.3s ease 0.5s;
+}
+
+.arrow-steps .step.current {
+	color:#fff;
+	background-color: #dbe91e;
+}
+
+.arrow-steps .step.current:after {
+	border-left: 17px solid #dbe91e;
+}
+
+.arrow-steps .step.current_prev {
+	color: #fff;
+	background-color: #3f883f;
+}
+
+.arrow-steps .step.current_prev:after {
+	border-left: 17px solid #3f883f;
+}
+
+.arrow-steps .step.current_next {
+	color: #fff;
+	background-color: #ea0000;
+	border-radius: 4px;
+}
+
+.arrow-steps .step.current_next:after {
+	border-left: 17px solid #ea0000;
+}
+.arrow-steps .clearfix {
+   text-transform:uppercase;
+}
+.step.current_next.last_progress:after{
+    display:none;
+
+}
+.progress_content .arrow-steps a
+{
+	text-decoration: none;
+
+}
+.progress_content .arrow-steps a:hover span
+{
+	color:black;
+}
+
+/* Progress bar nd */
+
+
+/*  */
+
+.nav-tabs-custom>.nav-tabs>li>a:hover {
+    color: white;
+}
+
